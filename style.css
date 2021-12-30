@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    padding-top: 160px;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
