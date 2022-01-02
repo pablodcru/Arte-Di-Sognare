@@ -5,11 +5,11 @@
 body{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    background-color: black;
+    /*overflow-x: hidden;*/
+    background-color: #202020;
     font-size: 12px;
     font-family: Arial;
-    color:chartreuse;
+    color:white;
 }
 
 
@@ -20,10 +20,12 @@ ul#navbar li.logo {
     
 }
 
+/*UTILIZAR ALOMEJOR SHAPE PARA PONER ARTE DI SOGNARE ACORDE CON LA FOTO
 ul#navbar li#blogo {
-    border: 2px solid white;
-    border-radius: 50%;
-}
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}*/
 
 
 nav {
@@ -65,14 +67,112 @@ section ul {
     margin: 0;
 }
 
-figure {
+h2{ 
     margin: 0;
     padding: 0;
 }
 
 figure {
-    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+
+figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    position:relative;
+    opacity: 1;
+}
+figcaption {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+figcaption p{
+    font-size: 15px;
+}
+
+figcaption:hover {
+    cursor: pointer;
+    opacity:1 ;
+}
+
+figcaption.one {
+    background-color: #4e2f1b;
+}
+figcaption.two {
+    background-color: #88CDBB;
+}
+figcaption.three {
+    background-color: #B9B3A0;
+}
+figcaption.four {
+    background-color: #8D84BB;
+}
+figcaption.five {
+    background-color: #D85A39;
+}
+figcaption.six {
+    background-color: #E0CBB4;
+}
+figcaption.seven {
+    background-color: #625B37;
+}
+figcaption.eight {
+    background-color: #3495BE;
+}
+figcaption.nine {
+    background-color: #B5CECF;
+}
+figcaption.ten {
+    background-color: #BDB8ED;
+}
+figcaption.eleven {
+    background-color: #F1E99B;
+}
+figcaption.twelve {
+    background-color: #F7A1F9;
+}
+figcaption.thirteen {
+    background-color: #39883E;
+}
+figcaption.fourteen {
+    background-color: #BDCDD2;
+}
+figcaption.fifteen {
+    background-color: #221C13;
+}
+figcaption.sixteen {
+    background-color: #028F74;
+}
+figcaption.seventeen {
+    background-color: #EED39D;
+}
+figcaption.eighteen {
+    background-color: #BD815E;
+}
+figcaption.nineteen {
+    background-color: #E8E8E8;
+}
+figcaption.twenty {
+    background-color: #27C320;
+}
+
+
 
 .row1{
     display: grid;
@@ -88,15 +188,6 @@ figure {
 
 }
 
-/*.img1onhover {
-    width: 608px;
-    height: 608px;
-    background: #4e2be1;
-    text-align:center;
-    align-items: center;
-    justify-items:center;
-}*/
-
 .img1 {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -104,25 +195,7 @@ figure {
     grid-row-end: 3;
 }
 
-.img1on {
-    background: #4e2be1;
-    display: flex;
-    flex-flow:column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
 
-.active {
-    z-index: 0;
-}
-
-.hidden {
-    display: none;
-    transition: all 3s ease;
-
-}
 
 
 
@@ -186,7 +259,6 @@ figure {
     grid-column:4/6;
     grid-row: 2/3;
 }
-
 
 
 
