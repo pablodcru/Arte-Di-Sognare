@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body{
+body#mainpage{
     margin: 0;
     padding: 0;
     /*overflow-x: hidden;*/
@@ -17,11 +17,12 @@ ul#navbar li.logo {
     background: url('../fotos/logo-redimensionado.png') no-repeat ;
     background-position: 7px center;
     
-    
 }
 
 /*UTILIZAR ALOMEJOR SHAPE PARA PONER ARTE DI SOGNARE ACORDE CON LA FOTO
 ul#navbar li#blogo {
+        shape-outside: polygon;
+
     display: flex;
     align-items: center;
     font-size: 12px;
@@ -100,7 +101,7 @@ figcaption {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: all 0.5s ease-out;
+    transition: all 0.3s ease-out;
 }
 figcaption p{
     font-size: 15px;
@@ -260,6 +261,18 @@ figcaption.twenty {
     grid-row: 2/3;
 }
 
+/* AFTER CLICK STYLES */
+.clickcontainer{
+    display: flex;
+    
+} 
+.img1click{
+    width: 608ox;
+    height: aut608px;
+    background: url("../fotos/1.png");
+    text-align: center;
+    align-items: center;
+}
 
 
 
