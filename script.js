@@ -1,13 +1,85 @@
-const img1 = document.querySelector('.img1');
-const container = document.querySelector('.clickcontainer');
+const uno = document.querySelector('#uno');
+const dos = document.querySelector('#dos');
+const tres = document.querySelector('#tres');
+const cuatro = document.querySelector('#cuatro');
+
+const oneC = document.querySelector('.one');
+
+const displayed = document.querySelector('.displayed');
+const gallery = document.querySelector('.gallery');
+const menu = document.querySelector('.menu');
+const closingButton = document.querySelector('.button');
+const title = document.querySelector('.title');
+
+
+
+let id;
+
 
 function getBigger(event) {
-    document.querySelector('body').style.opacity = "0.1";
-    document.body.style.background = "#4e2f1b";
-    container.children[0].classList.add('.img1click')
+
+    //Cambiar de color el BG, OBJETIVO, personalizarlo para cada foto
+    let bg = getComputedStyle(document.documentElement).getPropertyValue(`--${id}`);
+    document.body.style.background = bg;
+
+   //Para hacer display en la foto
+    let img = document.createElement('img');
+    img.setAttribute('src', `../fotos/${id}.png`);
+    img.setAttribute('class', 'proving');
+    displayed.appendChild(img);
+
+    //Título
+    /* title.classList.add("figcaption");
+    title.append(oneC.textContent); */
+    let figcap = oneC.children;
+
+    for ( let i = figcap.length - 1; i >= 0; i--) {
+        title.appendChild(figcap[i]);
+    }
+
+    /* for ( let i = 0; i <= figcap.length; i++) {
+        console.log(figcap.length);
+        console.log(i, figcap[i]);
+        title.appendChild(figcap[i]);
+    } */
+
+    //Crear boton de ir atrás
+    const button = document.createElement('button');
+    button.textContent = 'X';
+    closingButton.appendChild(button);
+    
+    //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
+    menu.style.display = "none";
+    gallery.style.display= "none";
+
+    //Darle interactividad al boton de ir atrás
+    if (closingButton.addEventListener('click', () => {
+        document.body.style.background = "#202020";
+        displayed.removeChild(img);
+        title.style.display = "none";
+        closingButton.removeChild(button);
+        menu.style.display = "block";
+        gallery.style.display = "block";
+    }));
+
+
 }
 
-img1.addEventListener('click', getBigger)
+
+//Para conseguir localizar a que foto se pincha, y posteriormente utilizar el nombre de ese id para buscar la foto que se mostrara.
+function cmon(element) {
+    id = element.id;
+}
+
+//Para llamar a la función una vez se ha definido el id; nose pq necesito meter el getBigger dentro de la arrow function, de otra manera, no funciona
+gallery.addEventListener('click', () => {
+    getBigger();
+})
+
+
+
+
+
 
 
 
