@@ -1,8 +1,16 @@
+:root {
+    --uno: #4e2f1b;
+    --dos: #88CDBB;
+    --tres: #B9B3A0;
+    --cuatro: #8D84BB;
+}
+
+
 * {
     box-sizing: border-box;
 }
 
-body#mainpage{
+body{
     margin: 0;
     padding: 0;
     /*overflow-x: hidden;*/
@@ -10,6 +18,82 @@ body#mainpage{
     font-size: 12px;
     font-family: Arial;
     color:white;
+    position: relative;
+    z-index: -1;
+}
+.one h2 {
+    color: green;
+}
+
+/*ANIMATION BG
+body:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background: blue;
+    z-index: -1;
+    transition: transform 2s;
+ 
+}
+
+body:link::after {
+    transform: scaleY(1);
+}*/
+
+
+/*NEW CLASSES AND ATTRIBUTES TO DISPLAY THE IMAGE AFTER CLICKING ON IT*/
+/*TO CENTER THE IMAGE ON THE CONTAINER, KEEPING ASPECT RATIO*/
+img.proving {
+    
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
+
+/*TO CENTER THE IMG AFTER CLICKING ON IT*/
+.displayed {
+    position: fixed;                                    /* to make the image apper on the center of the window no matter where you click on */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 550px;
+    max-height: 750px;
+}
+
+.button {
+    position: fixed;
+    top: 5%;
+    right: 3%;
+}
+.button:hover {
+    cursor: pointer;
+}
+
+.title {
+    position: fixed;
+    display: block;
+    top: 5%;
+    left: 3%;
+    font-size: 10px;
+}
+
+/*Z-INDEX AND CLASSES FOR DISPLAYING NONE WHEN CLICK*/
+.displayed {
+    position: fixed;
+    z-index: 2;
+}
+.gallery {
+    position: relative;
+    z-index: 1;
+}
+.menu {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -62,7 +146,7 @@ nav a:hover{
 }
 
 
-section ul {
+div ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -87,6 +171,9 @@ figure {
     position:relative;
     opacity: 1;
 }
+
+
+
 figcaption {
     display: flex;
     flex-flow: column;
@@ -113,17 +200,18 @@ figcaption:hover {
 }
 
 figcaption.one {
-    background-color: #4e2f1b;
+    background-color: var(--uno);
 }
 figcaption.two {
-    background-color: #88CDBB;
+    background-color: var(--dos);
 }
 figcaption.three {
-    background-color: #B9B3A0;
+    background-color: var(--tres);
 }
 figcaption.four {
-    background-color: #8D84BB;
+    background-color: var(--cuatro);
 }
+
 figcaption.five {
     background-color: #D85A39;
 }
@@ -180,6 +268,7 @@ figcaption.twenty {
     grid-template-columns: repeat(5, 303px);
     grid-template-rows: repeat(2, 303px);
 
+
 }
 
 .row2{
@@ -189,7 +278,7 @@ figcaption.twenty {
 
 }
 
-.img1 {
+#uno {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
@@ -200,18 +289,18 @@ figcaption.twenty {
 
 
 
-.img3 {
+#tres {
     grid-column: 3/4;
     grid-row: 2/3;
 }
 
-.img2 {
+#dos {
     grid-column: 3/4;
     grid-row: 1/2;
 }
 
 
-.img4 {
+#cuatro {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
@@ -266,13 +355,16 @@ figcaption.twenty {
     display: flex;
     
 } 
-.img1click{
-    width: 608ox;
-    height: aut608px;
-    background: url("../fotos/1.png");
+
+.moving {
+    flex: auto;
     text-align: center;
     align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 500px;
+    height: 800px;
+    object-fit: contain;
+
 }
-
-
 
