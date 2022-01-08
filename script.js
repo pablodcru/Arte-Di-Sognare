@@ -1,10 +1,16 @@
+//IDs PARA MOSTRAR LA IMAGEN GRANDE
 const uno = document.querySelector('#uno');
 const dos = document.querySelector('#dos');
 const tres = document.querySelector('#tres');
 const cuatro = document.querySelector('#cuatro');
 
-const oneC = document.querySelector('.one');
+//CLASES PARA MOSTRAR LAS CAPTION CORRESPONDIENTES
+const oneC = document.querySelector('.uno');
+const dosC = document.querySelector('.dos');
+const tresC = document.querySelector('.tres');
+const cuatroC = document.querySelector('.cuatro');
 
+//AND MORE
 const displayed = document.querySelector('.displayed');
 const gallery = document.querySelector('.gallery');
 const menu = document.querySelector('.menu');
@@ -31,10 +37,12 @@ function getBigger(event) {
     //Título
     /* title.classList.add("figcaption");
     title.append(oneC.textContent); */
-    let figcap = oneC.children;
-
-    for ( let i = figcap.length - 1; i >= 0; i--) {
-        title.appendChild(figcap[i]);
+    title.classList.remove('hidden');
+    let figCapId = `${id}C`;
+    let figCap = tresC.children;     //poner el titulo para cada obre, signo dolar
+    console.log(figCapId, figCap, figCapId.children);
+    for ( let i = figCap.length - 1; i >= 0; i--) {
+        title.appendChild(figCap[i]);
     }
 
     /* for ( let i = 0; i <= figcap.length; i++) {
@@ -49,21 +57,21 @@ function getBigger(event) {
     closingButton.appendChild(button);
     
     //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
-    menu.style.display = "none";
-    gallery.style.display= "none";
+    menu.classList.add('hidden');
+    gallery.classList.add('hidden');
+
 
     //Darle interactividad al boton de ir atrás
-    if (closingButton.addEventListener('click', () => {
+    closingButton.addEventListener('click', () => {
         document.body.style.background = "#202020";
         displayed.removeChild(img);
-        title.style.display = "none";
+        title.classList.add('hidden');
         closingButton.removeChild(button);
-        menu.style.display = "block";
-        gallery.style.display = "block";
-    }));
+        menu.classList.remove('hidden');
+        gallery.classList.remove('hidden');
+    })
+};
 
-
-}
 
 
 //Para conseguir localizar a que foto se pincha, y posteriormente utilizar el nombre de ese id para buscar la foto que se mostrara.
