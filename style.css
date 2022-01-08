@@ -3,6 +3,23 @@
     --dos: #88CDBB;
     --tres: #B9B3A0;
     --cuatro: #8D84BB;
+    --cinco: #D85A39;
+    --seis: #E0CBB4;
+    --siete:#625B37;
+    --ocho: #3495BE;
+    --nueve: #B5CECF;
+    --diez: #BDB8ED;
+    --once: #F1E99B;
+    --doce: #F7A1F9;
+    --trece: #39883E;
+    --catorce: #BDCDD2;
+    --quince: #221C13;
+    --dieciseis: #028F74;
+    --diecisiete: #EED39D;
+    --dieciocho: #BD815E;
+    --diecinueve: #E8E8E8;
+    --veinte: #27C320;
+
 }
 
 
@@ -94,6 +111,12 @@ img.proving {
 .menu {
     position: relative;
     z-index: 1;
+    margin-bottom: 30px;
+
+}
+
+.hidden {
+    display: none;
 }
 
 
@@ -114,7 +137,7 @@ ul#navbar li#blogo {
 
 
 nav {
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 
@@ -129,7 +152,7 @@ nav ul{
 }
 nav li{
     text-align:center;
-    margin-bottom:0.5rem;
+    margin-bottom: 0.5rem;
     display: inline-block;        /*este es el comando para ponerlo horizontal*/
 }
 nav a{
@@ -142,7 +165,7 @@ nav a{
 }
 nav a:hover{
     text-decoration: underline;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 
@@ -199,66 +222,65 @@ figcaption:hover {
     opacity:1 ;
 }
 
-figcaption.one {
+figcaption.uno {
     background-color: var(--uno);
 }
-figcaption.two {
+figcaption.dos {
     background-color: var(--dos);
 }
-figcaption.three {
+figcaption.tres {
     background-color: var(--tres);
 }
-figcaption.four {
+figcaption.cuatro {
     background-color: var(--cuatro);
 }
-
-figcaption.five {
-    background-color: #D85A39;
+figcaption.cinco {
+    background-color: var(--cinco);
 }
-figcaption.six {
-    background-color: #E0CBB4;
+figcaption.seis {
+    background-color: var(--seis);
 }
-figcaption.seven {
-    background-color: #625B37;
+figcaption.siete {
+    background-color: var(--siete);
 }
-figcaption.eight {
-    background-color: #3495BE;
+figcaption.ocho {
+    background-color: var(--ocho);
 }
-figcaption.nine {
-    background-color: #B5CECF;
+figcaption.nueve {
+    background-color: var(--nueve);
 }
-figcaption.ten {
-    background-color: #BDB8ED;
+figcaption.diez {
+    background-color: var(--diez);
 }
-figcaption.eleven {
-    background-color: #F1E99B;
+figcaption.once {
+    background-color: var(--once);
 }
-figcaption.twelve {
-    background-color: #F7A1F9;
+figcaption.doce {
+    background-color: var(--doce);
 }
-figcaption.thirteen {
-    background-color: #39883E;
+figcaption.trece {
+    background-color: var(--trece);
 }
-figcaption.fourteen {
-    background-color: #BDCDD2;
+figcaption.catorce {
+    background-color: var(--catorce);
 }
-figcaption.fifteen {
-    background-color: #221C13;
+figcaption.quince {
+    background-color: var(--quince);
 }
-figcaption.sixteen {
-    background-color: #028F74;
+figcaption.dieciseis {
+    background-color: var(--dieciseis);
 }
-figcaption.seventeen {
-    background-color: #EED39D;
+figcaption.diecisiete {
+    background-color: var(--diecisiete);
 }
-figcaption.eighteen {
-    background-color: #BD815E;
+figcaption.dieciocho {
+    background-color: var(--dieciocho);
 }
-figcaption.nineteen {
-    background-color: #E8E8E8;
+figcaption.diecinueve {
+    background-color: var(--diecinueve);
 }
-figcaption.twenty {
-    background-color: #27C320;
+figcaption.veinte {
+    background-color: var(--veinte);
 }
 
 
@@ -284,68 +306,71 @@ figcaption.twenty {
     grid-row-start: 1;
     grid-row-end: 3;
 }
-
-
-
-
-
-#tres {
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-
 #dos {
     grid-column: 3/4;
     grid-row: 1/2;
 }
-
-
+#tres {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
 #cuatro {
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 3;
 }
-.img5 {
+#cinco {
     grid-column: 1/3;
     grid-row: 1/3;
 }
-
-.img6 {
+#seis{
     grid-column: 3/4;
     grid-row: 1/2;
 }
-
-.img7 {
+#siete{
     grid-column: 3/4;
     grid-row: 2/3;
 }
-.img8 {
+
+#ocho {
     grid-column: 4/5;
     grid-row: 1/3;
 }
-.img9 {
+#nueve {
     grid-column: 5/6;
     grid-row: 1/2;
 }
-.img10{
+#diez{
     grid-column: 5/6;
     grid-row: 2/3;
 }
-.img14 {
+#trece {
     grid-column: 3/5;
     grid-row: 1/2;
 }
-.img13 {
+#quince {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+#dieciseis {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+#diecisiete {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#dieciocho {
     grid-column: 4/5;
     grid-row: 1/2;
 }
 
-.img11{
+#diecinueve{
     grid-column: 5/6;
     grid-row: 1/2;
 }
-.img12{
+#veinte{
     grid-column:4/6;
     grid-row: 2/3;
 }
@@ -367,4 +392,3 @@ figcaption.twenty {
     object-fit: contain;
 
 }
-
