@@ -126,6 +126,7 @@ ul#navbar li.logo {
     
 }
 
+
 /*UTILIZAR ALOMEJOR SHAPE PARA PONER ARTE DI SOGNARE ACORDE CON LA FOTO
 ul#navbar li#blogo {
         shape-outside: polygon;
@@ -135,6 +136,60 @@ ul#navbar li#blogo {
     font-size: 12px;
 }*/
 
+/* PAGINA PEDIDOS */
+.pedidos {
+    padding-left: 27%;
+}
+
+/* PÁGINA CONÓCEME */
+.contenido{
+    display: flex;
+}
+.texto{
+    display: block;
+    align-items: center;
+    justify-items: center;
+    font-size: 30px;
+    padding-left: 170px;
+    padding-top: 90px;
+    padding-right: 200px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: bold;
+}
+
+.contacto {
+    padding-top: 90px;
+    padding-right: 200px;
+    font-size: 19px;
+
+}
+.social{
+    display: flex;
+
+}
+.fa {
+    color: white;
+    padding: 7px 7px;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  .fa-instagram{
+    background-color: #C13584;
+  }
+  .fa-twitter{
+    background-color: #1DA1F2;
+  }
+  .fa-facebook{
+    background-color: #405DE6;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
+/* FIN PÁGINA CONOCEME */
 
 nav {
     padding-top: 30px;
@@ -146,7 +201,7 @@ nav ul{
     padding:0;
     margin-bottom: 25px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
 }
