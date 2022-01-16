@@ -34,7 +34,7 @@ function getBigger(event) {
     img.setAttribute('class', 'proving');
     displayed.appendChild(img);
 
-    //Título
+    //Título y borradores
     /* title.classList.add("figcaption");
     title.append(oneC.textContent); */
     title.classList.remove('hidden');
@@ -112,3 +112,4 @@ function appearImage(event) {
 
 img1.addEventListener('mouseenter', hideImage)
 img1.addEventListener('mouseleave', appearImage)*/
+
