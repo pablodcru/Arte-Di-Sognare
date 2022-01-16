@@ -1,0 +1,434 @@
+/* ESTABLECEMOS LOS COLORES A USAR A LO LARGO DEL PROYECTO */
+:root {
+    --uno: #4e2f1b;
+    --dos: #88CDBB;
+    --tres: #B9B3A0;
+    --cuatro: #8D84BB;
+    --cinco: #D85A39;
+    --seis: #E0CBB4;
+    --siete:#625B37;
+    --ocho: #3495BE;
+    --nueve: #B5CECF;
+    --diez: #BDB8ED;
+    --once: #F1E99B;
+    --doce: #F7A1F9;
+    --trece: #39883E;
+    --catorce: #BDCDD2;
+    --quince: #221C13;
+    --dieciseis: #028F74;
+    --diecisiete: #EED39D;
+    --dieciocho: #BD815E;
+    --diecinueve: #E8E8E8;
+    --veinte: #27C320;
+}
+
+/* DAMOS FORMA AL CUERPO */
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /*overflow-x: hidden;*/
+    background-color: #202020;
+    font-size: 12px;
+    font-family: Arial;
+    color:white;
+    position: relative;
+    z-index: -1;
+}
+
+
+/*TO DO: TRANSITION AFTER CLICKING ON IMAGES
+body:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background: blue;
+    z-index: -1;
+    transition: transform 2s;
+ 
+}
+
+body:link::after {
+    transform: scaleY(1);
+}*/
+
+
+/*NEW CLASSES AND ATTRIBUTES TO DISPLAY THE IMAGE AFTER CLICKING ON IT*/
+
+/*centering the img, aspect-ratio*/
+img.proving {  
+    width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
+}
+
+/*TO CENTER THE IMG AFTER CLICKING ON IT*/
+.displayed {
+    position: fixed;                                    /* to make the image apper on the center of the window no matter where you click on */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 550px;
+    max-height: 750px;
+}
+.button {
+    position: fixed;
+    top: 5%;
+    right: 3%;
+}
+.button:hover {
+    cursor: pointer;
+}
+.title {
+    position: fixed;
+    display: block;
+    top: 5%;
+    left: 3%;
+    font-size: 10px;
+}
+
+/*Z-INDEX AND CLASSES FOR DISPLAYING NONE WHEN CLICK*/
+.displayed {
+    position: fixed;
+    z-index: 2;
+}
+.gallery {
+    position: relative;
+    z-index: 1;
+}
+.menu {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+.hidden {
+    display: none;
+}
+
+
+
+
+
+/*UTILIZAR ALOMEJOR SHAPE PARA PONER ARTE DI SOGNARE ACORDE CON LA FOTO
+ul#navbar li#blogo {
+        shape-outside: polygon;
+
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}*/
+
+/* PAGINA PEDIDOS */
+.pedidos {
+    padding-left: 27%;
+}
+
+/* PÁGINA CONÓCEME */
+.contenido{
+    display: flex;
+}
+.texto{
+    display: block;
+    align-items: center;
+    justify-items: center;
+    font-size: 30px;
+    padding-left: 170px;
+    padding-top: 90px;
+    padding-right: 200px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: bold;
+}
+.contacto {
+    padding-top: 90px;
+    padding-right: 200px;
+    font-size: 19px;
+}
+/* redes sociales */
+.social{
+    display: flex;
+}
+.fa {
+    color: white;
+    padding: 7px 7px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+  
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-instagram{
+    background-color: #C13584;
+}
+.fa-twitter{
+    background-color: #1DA1F2;
+}
+.fa-facebook{
+    background-color: #405DE6;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+/* FIN PÁGINA CONOCEME */
+
+/* MENÚ NAVEGACION */
+ul#navbar li.logo {
+    background: url('../fotos/logo-redimensionado.png') no-repeat ;
+    background-position: 7px center;    
+}
+nav {
+    padding-top: 30px;
+}
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+nav li{
+    text-align:center;
+    margin-bottom: 0.5rem;
+    display: inline-block;        /*este es el comando para ponerlo horizontal*/
+}
+nav a{
+    color:white;
+    font-family: 'Moon Dance', cursive;
+    font-size:1.5rem;
+    text-decoration: none;
+    display: block;
+    padding:0.5rem;
+}
+nav a:hover{
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+div ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+h2{ 
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILOS PARA EL GRID PRINCIPAL */
+figure {
+    margin: 0;
+    padding: 0;
+}
+figure {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    position:relative;
+    opacity: 1;
+}
+figcaption {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+figcaption p{
+    font-size: 15px;
+}
+
+figcaption:hover {
+    cursor: pointer;
+    opacity:1 ;
+}
+
+/* ESTABLECEMOS COLORES PARA CADA FIGURA */
+figcaption.uno {
+    background-color: var(--uno);
+}
+figcaption.dos {
+    background-color: var(--dos);
+}
+figcaption.tres {
+    background-color: var(--tres);
+}
+figcaption.cuatro {
+    background-color: var(--cuatro);
+}
+figcaption.cinco {
+    background-color: var(--cinco);
+}
+figcaption.seis {
+    background-color: var(--seis);
+}
+figcaption.siete {
+    background-color: var(--siete);
+}
+figcaption.ocho {
+    background-color: var(--ocho);
+}
+figcaption.nueve {
+    background-color: var(--nueve);
+}
+figcaption.diez {
+    background-color: var(--diez);
+}
+figcaption.once {
+    background-color: var(--once);
+}
+figcaption.doce {
+    background-color: var(--doce);
+}
+figcaption.trece {
+    background-color: var(--trece);
+}
+figcaption.catorce {
+    background-color: var(--catorce);
+}
+figcaption.quince {
+    background-color: var(--quince);
+}
+figcaption.dieciseis {
+    background-color: var(--dieciseis);
+}
+figcaption.diecisiete {
+    background-color: var(--diecisiete);
+}
+figcaption.dieciocho {
+    background-color: var(--dieciocho);
+}
+figcaption.diecinueve {
+    background-color: var(--diecinueve);
+}
+figcaption.veinte {
+    background-color: var(--veinte);
+}
+
+/* ESTABLECEMOS LA DISPOSICION DEL GRID */
+/* Empezamos estableciendo la disposición horizontal junto con los tamaños */
+.row1{
+    display: grid;
+    grid-template-columns: repeat(5, 303px);
+    grid-template-rows: repeat(2, 303px);
+}
+.row2{
+    display: grid;
+    grid-template-columns: repeat(5, 303px);
+    grid-template-rows: repeat(1, 303px);
+}
+
+/* Establecemos cada posición de las imagenes */
+#uno {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#dos {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+#tres {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#cuatro {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#cinco {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+#seis{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+#siete{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+#ocho {
+    grid-column: 4/5;
+    grid-row: 1/3;
+}
+#nueve {
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+#diez{
+    grid-column: 5/6;
+    grid-row: 2/3;
+}
+#trece {
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+#quince {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+#dieciseis {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+#diecisiete {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+#dieciocho {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+#diecinueve{
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+#veinte{
+    grid-column:4/6;
+    grid-row: 2/3;
+}
+
+/* AFTER CLICK STYLES 
+.clickcontainer{
+    display: flex;
+    
+} 
+.moving {
+    flex: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: 500px;
+    height: 800px;
+    object-fit: contain;
+}
+*/
+
+
+
+
+
