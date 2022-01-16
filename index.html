@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arte Di Sognare</title>
     <link rel="stylesheet" href="style.css"/>
-    <!-- add icon link -->
+
+    <!-- ADD ICON LINK -->
     <link rel = "icon" href = "../fotos/logo.png" type = "image/x-icon">
+
+    <!-- DIFFERENT FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
@@ -16,16 +19,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
     <div class="alles">
 
+        <!-- CONTENEDOR DONDE AÑADIREMOS EL TÍTULO CON JS -->
         <div class= "title">
 
         </div>
 
+        <!-- CONTENEDOR DONDE AÑADIREMOS EL BOTON CON JS -->
         <div class="button">
 
         </div>
-        <!--AFTER CLICK-->
+
+        <!--CONTENEDOR DONDE AÑADIREMOS LA INTERFAZ CON JS-->
         <div class="displayed">
 
         </div>
@@ -43,22 +51,22 @@
         </div>    
 
         <!-- GALERIA-->
-
         <div class="gallery">
 
             <!--ESTABLECEMOS PARTES DEL GRID-->
-
+            <!-- PRIMERA FILA -->
             <div class="row1">
-            
-                <figure id="uno" onClick="cmon(this)">
-                    <img src="../fotos/1rg.png" alt="hyper"/>
-                    <figcaption class="uno">
-                        <h2>POSIBLE TITULO</h2>
-                        <p>____</p>
-                        <p>Posible descripcion</p>
-                    </figcaption>
-                </figure>
-                    
+
+                <div id="uno" onClick="cmon(this)">
+                    <figure>
+                        <img src="../fotos/1rg.png" alt="hyper"/>
+                        <figcaption class="uno">
+                            <h2>POSIBLE TITULO</h2>
+                            <p>____</p>
+                            <p>Posible descripcion</p>
+                        </figcaption>
+                    </figure>
+                </div> 
                 
                 <div id="dos" onClick="cmon(this)">
                     <figure>
@@ -70,6 +78,7 @@
                         </figcaption>
                     </figure>
                 </div>
+
                 <div id="tres" onClick="cmon(this)">
                     <figure>
                         <img src="../fotos/7rp.png" alt="hyper" />
@@ -80,6 +89,7 @@
                         </figcaption>
                     </figure>
                 </div>
+
                 <div id="cuatro" onClick="cmon(this)">
                     <figure>
                         <img src="../fotos/4rg.png"  alt="hyper" />
@@ -89,9 +99,10 @@
                             <p>Posible descripcion<p>
                         </figcaption>
                     </figure>
-                </div>
-                
+                </div>               
             </div>
+
+            <!-- SEGUNDA FILA -->
             <div class="row1">
                 <div id = "cinco" onClick="cmon(this)">
                     <figure>
@@ -103,6 +114,7 @@
                         </figcaption>
                     </figure>
                 </div>
+
                 <div id = "seis" onClick="cmon(this)">
                     <figure>
                         <img src="../fotos/2rp.png" alt="hyper" />
@@ -113,6 +125,7 @@
                         </figcaption>
                     </figure>
                 </div>
+
                 <div id = "siete" onClick="cmon(this)">
                     <figure>
                         <img src="../fotos/3rp.png" alt="hyper" />
@@ -123,6 +136,7 @@
                         </figcaption>
                     </figure>
                 </div>
+
                 <div id = "ocho" onClick="cmon(this)">
                     <figure>
                         <img src="../fotos/8ra.png" alt="hyper" />
@@ -154,6 +168,8 @@
                     </figure>
                 </div>
             </div>
+
+            <!-- TERCERA FILA -->
             <div class="row2">
                 <div id = "once" onClick="cmon(this)">
                     <figure>
@@ -197,6 +213,8 @@
                 </div>
                 
             </div>
+
+            <!-- CUARTA FILA -->
             <div class="row1">
                 <div id="quince" onClick="cmon(this)">
                     <figure >
@@ -266,7 +284,6 @@
     </div>
 
         <!--LO UNIMOS CON JS-->
-
     <script src="script.js"></script>           
 
 </body>
