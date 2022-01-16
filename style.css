@@ -1,3 +1,4 @@
+/* ESTABLECEMOS LOS COLORES A USAR A LO LARGO DEL PROYECTO */
 :root {
     --uno: #4e2f1b;
     --dos: #88CDBB;
@@ -19,10 +20,9 @@
     --dieciocho: #BD815E;
     --diecinueve: #E8E8E8;
     --veinte: #27C320;
-
 }
 
-
+/* DAMOS FORMA AL CUERPO */
 * {
     box-sizing: border-box;
 }
@@ -38,11 +38,9 @@ body{
     position: relative;
     z-index: -1;
 }
-.one h2 {
-    color: green;
-}
 
-/*ANIMATION BG
+
+/*TO DO: TRANSITION AFTER CLICKING ON IMAGES
 body:after {
     content: "";
     position: absolute;
@@ -64,9 +62,9 @@ body:link::after {
 
 
 /*NEW CLASSES AND ATTRIBUTES TO DISPLAY THE IMAGE AFTER CLICKING ON IT*/
-/*TO CENTER THE IMAGE ON THE CONTAINER, KEEPING ASPECT RATIO*/
-img.proving {
-    
+
+/*centering the img, aspect-ratio*/
+img.proving {  
     width: 100%; /* or any custom size */
     height: 100%; 
     object-fit: contain;
@@ -81,7 +79,6 @@ img.proving {
     max-width: 550px;
     max-height: 750px;
 }
-
 .button {
     position: fixed;
     top: 5%;
@@ -90,7 +87,6 @@ img.proving {
 .button:hover {
     cursor: pointer;
 }
-
 .title {
     position: fixed;
     display: block;
@@ -112,19 +108,13 @@ img.proving {
     position: relative;
     z-index: 1;
     margin-bottom: 30px;
-
 }
-
 .hidden {
     display: none;
 }
 
 
-ul#navbar li.logo {
-    background: url('../fotos/logo-redimensionado.png') no-repeat ;
-    background-position: 7px center;
-    
-}
+
 
 
 /*UTILIZAR ALOMEJOR SHAPE PARA PONER ARTE DI SOGNARE ACORDE CON LA FOTO
@@ -156,46 +146,46 @@ ul#navbar li#blogo {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: bold;
 }
-
 .contacto {
     padding-top: 90px;
     padding-right: 200px;
     font-size: 19px;
-
 }
+/* redes sociales */
 .social{
     display: flex;
-
 }
 .fa {
     color: white;
     padding: 7px 7px;
     text-decoration: none;
     border-radius: 50%;
-  }
+}
   
-  .fa:hover {
-      opacity: 0.7;
-  }
-  .fa-instagram{
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-instagram{
     background-color: #C13584;
-  }
-  .fa-twitter{
+}
+.fa-twitter{
     background-color: #1DA1F2;
-  }
-  .fa-facebook{
+}
+.fa-facebook{
     background-color: #405DE6;
     padding-right: 10px;
     padding-left: 10px;
-  }
-  
+}
 /* FIN PÁGINA CONOCEME */
 
+/* MENÚ NAVEGACION */
+ul#navbar li.logo {
+    background: url('../fotos/logo-redimensionado.png') no-repeat ;
+    background-position: 7px center;    
+}
 nav {
     padding-top: 30px;
 }
-
-
 nav ul{
     list-style-type: none;
     padding:0;
@@ -222,25 +212,21 @@ nav a:hover{
     text-decoration: underline;
     padding-bottom: 5px;
 }
-
-
 div ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-
 h2{ 
     margin: 0;
     padding: 0;
 }
 
+/* ESTILOS PARA EL GRID PRINCIPAL */
 figure {
     margin: 0;
     padding: 0;
 }
-
-
 figure {
     margin: 0;
     padding: 0;
@@ -249,9 +235,6 @@ figure {
     position:relative;
     opacity: 1;
 }
-
-
-
 figcaption {
     display: flex;
     flex-flow: column;
@@ -277,6 +260,7 @@ figcaption:hover {
     opacity:1 ;
 }
 
+/* ESTABLECEMOS COLORES PARA CADA FIGURA */
 figcaption.uno {
     background-color: var(--uno);
 }
@@ -338,23 +322,20 @@ figcaption.veinte {
     background-color: var(--veinte);
 }
 
-
-
+/* ESTABLECEMOS LA DISPOSICION DEL GRID */
+/* Empezamos estableciendo la disposición horizontal junto con los tamaños */
 .row1{
     display: grid;
     grid-template-columns: repeat(5, 303px);
     grid-template-rows: repeat(2, 303px);
-
-
 }
-
 .row2{
     display: grid;
     grid-template-columns: repeat(5, 303px);
     grid-template-rows: repeat(1, 303px);
-
 }
 
+/* Establecemos cada posición de las imagenes */
 #uno {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -430,12 +411,11 @@ figcaption.veinte {
     grid-row: 2/3;
 }
 
-/* AFTER CLICK STYLES */
+/* AFTER CLICK STYLES 
 .clickcontainer{
     display: flex;
     
 } 
-
 .moving {
     flex: auto;
     text-align: center;
@@ -445,5 +425,5 @@ figcaption.veinte {
     width: 500px;
     height: 800px;
     object-fit: contain;
-
 }
+*/
