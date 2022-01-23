@@ -31,7 +31,7 @@ function getBigger(event) {
 
    //Para hacer display en la foto
     let img = document.createElement('img');
-    img.setAttribute('src', `../fotos/${id}.png`);
+    img.setAttribute('src', `./fotos/${id}.png`);
     img.setAttribute('class', 'proving');
     displayed.appendChild(img);
 
