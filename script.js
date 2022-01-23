@@ -16,6 +16,7 @@ const gallery = document.querySelector('.gallery');
 const menu = document.querySelector('.menu');
 const closingButton = document.querySelector('.button');
 const title = document.querySelector('.title');
+const moveButtons = document.querySelector('.moveButtons');
 
 
 
@@ -30,7 +31,7 @@ function getBigger(event) {
 
    //Para hacer display en la foto
     let img = document.createElement('img');
-    img.setAttribute('src', `./fotos/${id}.png`);
+    img.setAttribute('src', `../fotos/${id}.png`);
     img.setAttribute('class', 'proving');
     displayed.appendChild(img);
 
@@ -40,8 +41,8 @@ function getBigger(event) {
     title.classList.remove('hidden');
     let figCapId = `${id}C`;
     let figCap = tresC.children;     //poner el titulo para cada obre, signo dolar
-    console.log(figCapId, figCap, figCapId.children);
-    for ( let i = figCap.length - 1; i >= 0; i--) {
+/*     console.log(figCapId, figCap, figCapId.children);
+ */    for ( let i = figCap.length - 1; i >= 0; i--) {
         title.appendChild(figCap[i]);
     }
 
@@ -53,8 +54,31 @@ function getBigger(event) {
 
     //Crear boton de ir atrás
     const button = document.createElement('button');
-    button.textContent = 'X';
+    button.classList.add('fas', 'fa-times');
     closingButton.appendChild(button);
+
+    //Crear botones de ir dcha/izq
+    const moveLeft = document.createElement('button');
+    const moveRight = document.createElement('button');
+    const iMoveLeft = document.createElement('i');
+    const iMoveRight = document.createElement('i');
+
+    moveLeft.appendChild(iMoveLeft);
+    moveRight.appendChild(iMoveRight);
+    moveButtons.appendChild(moveLeft);
+    moveButtons.appendChild(moveRight);
+
+    if ( id === 'uno' ) {
+        iMoveRight.classList.add('fas', 'fa-caret-right');
+    } else if ( id === 'veinte') {
+        iMoveLeft.classList.add('fas', 'fa-caret-left');
+    }else {
+        iMoveRight.classList.add('fas', 'fa-caret-right');
+        iMoveLeft.classList.add('fas', 'fa-caret-left');
+    }
+
+    moveLeft.addEventListener('click', movePhoto);
+    moveRight.addEventListener('click', movePhoto);
     
     //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
     menu.classList.add('hidden');
@@ -67,10 +91,18 @@ function getBigger(event) {
         displayed.removeChild(img);
         title.classList.add('hidden');
         closingButton.removeChild(button);
+        moveButtons.removeChild(moveLeft);
+        moveButtons.removeChild(moveRight);
         menu.classList.remove('hidden');
         gallery.classList.remove('hidden');
     })
 };
+
+
+//Establecer interactividad para pasar de foto una vez agrandada de izquierda a derecha
+function movePhoto() {
+    console.log('wihuuu');
+}
 
 
 
@@ -112,4 +144,3 @@ function appearImage(event) {
 
 img1.addEventListener('mouseenter', hideImage)
 img1.addEventListener('mouseleave', appearImage)*/
-
