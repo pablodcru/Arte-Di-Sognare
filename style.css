@@ -70,7 +70,7 @@ img.proving {
     object-fit: contain;
 }
 
-/*TO CENTER THE IMG AFTER CLICKING ON IT*/
+/*To center the img after clicking on it*/
 .displayed {
     position: fixed;                                    /* to make the image apper on the center of the window no matter where you click on */
     top: 50%;
@@ -79,14 +79,7 @@ img.proving {
     max-width: 550px;
     max-height: 750px;
 }
-.button {
-    position: fixed;
-    top: 5%;
-    right: 3%;
-}
-.button:hover {
-    cursor: pointer;
-}
+/* Display title and description after clicking on photo */
 .title {
     position: fixed;
     display: block;
@@ -94,6 +87,41 @@ img.proving {
     left: 3%;
     font-size: 10px;
 }
+/* Buttons */
+button {
+    background: none;
+    font-weight: 100;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+}
+button:hover {
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+
+}
+/* Closing button */
+.button {
+    position: fixed;
+    top: 5%;
+    right: 3%;
+}
+button.fas {
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+/* Move right/left buttons */
+.moveButtons {
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+}
+i {
+    font-size: 30px;
+    color: whitesmoke;
+    padding-left: 25px;
+}
+
 
 /*Z-INDEX AND CLASSES FOR DISPLAYING NONE WHEN CLICK*/
 .displayed {
@@ -249,7 +277,7 @@ figcaption {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease-out;
 }
 figcaption p{
     font-size: 15px;
