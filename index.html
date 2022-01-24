@@ -25,6 +25,8 @@
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="alles">
 
+
+
         <!-- CONTENEDOR DONDE AÑADIREMOS EL TÍTULO CON JS -->
         <div class= "title">
 
@@ -42,6 +44,11 @@
         <!--CONTENEDOR DONDE AÑADIREMOS LA INTERFAZ CON JS-->
         <div class="displayed">
 
+        </div>
+
+        <!-- LOADER -->
+        <div class="loader" id="loader" hidden>
+            <img src="loader.svg" alt="Loading">
         </div>
 
         <!-- MENU NAVEGACION-->
@@ -63,7 +70,7 @@
             <!-- PRIMERA FILA -->
             <div class="row1">
 
-                <div id="uno" onClick="cmon(this)">
+                <div id="uno" class="1" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/1rg.png" alt="hyper"/>
                         <figcaption class="uno">
@@ -74,7 +81,7 @@
                     </figure>
                 </div> 
                 
-                <div id="dos" onClick="cmon(this)">
+                <div id="dos" class="2" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/5rp.png" alt="hyper" />
                         <figcaption class="dos">
@@ -85,7 +92,7 @@
                     </figure>
                 </div>
 
-                <div id="tres" onClick="cmon(this)">
+                <div id="tres" class="3" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/7rp.png" alt="hyper" />
                         <figcaption class="tres">
@@ -96,7 +103,7 @@
                     </figure>
                 </div>
 
-                <div id="cuatro" onClick="cmon(this)">
+                <div id="cuatro" class="4" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/4rg.png"  alt="hyper" />
                         <figcaption class="cuatro">
@@ -110,7 +117,7 @@
 
             <!-- SEGUNDA FILA -->
             <div class="row1">
-                <div id = "cinco" onClick="cmon(this)">
+                <div id = "cinco" class="5" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/6rg.png" alt="hyper" />
                         <figcaption class="cinco">
@@ -121,7 +128,7 @@
                     </figure>
                 </div>
 
-                <div id = "seis" onClick="cmon(this)">
+                <div id = "seis" class="6" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/2rp.png" alt="hyper" />
                         <figcaption class="seis">
@@ -132,7 +139,7 @@
                     </figure>
                 </div>
 
-                <div id = "siete" onClick="cmon(this)">
+                <div id = "siete"  class="7" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/3rp.png" alt="hyper" />
                         <figcaption class="siete">
@@ -143,7 +150,7 @@
                     </figure>
                 </div>
 
-                <div id = "ocho" onClick="cmon(this)">
+                <div id = "ocho"  class="8" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/8ra.png" alt="hyper" />
                         <figcaption class="ocho">
@@ -153,7 +160,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "nueve" onClick="cmon(this)">
+                <div id = "nueve"  class="9" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/11rp.png" alt="hyper" />
                         <figcaption class="nueve">
@@ -163,7 +170,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "diez" onClick="cmon(this)">
+                <div id = "diez"  class="10" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/9rp.png" alt="hyper" />
                         <figcaption class="diez">
@@ -177,7 +184,7 @@
 
             <!-- TERCERA FILA -->
             <div class="row2">
-                <div id = "once" onClick="cmon(this)">
+                <div id = "once"  class="11" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/15rp.png" alt="hyper" />
                         <figcaption class="once">
@@ -187,7 +194,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "doce" onClick="cmon(this)">
+                <div id = "doce"  class="12" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/16rp.png" alt="hyper" />
                         <figcaption class="doce">
@@ -197,7 +204,7 @@
                         </figcaption>
                     </figure>
                 </div >
-                <div id = "trece" onClick="cmon(this)">
+                <div id = "trece"  class="13" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/14rw2.png" alt="hyper" />
                         <figcaption class="trece">
@@ -207,7 +214,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "catorce" onClick="cmon(this)">
+                <div id = "catorce"  class="14" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/17rp.png" alt="hyper" />
                         <figcaption class="catorce">
@@ -222,7 +229,7 @@
 
             <!-- CUARTA FILA -->
             <div class="row1">
-                <div id="quince" onClick="cmon(this)">
+                <div id="quince"  class="15" onClick="cmon(this)">
                     <figure >
                         <img src="./fotos/18rg.png" alt="hyper" />
                         <figcaption class="quince">
@@ -232,7 +239,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "dieciseis" onClick="cmon(this)">
+                <div id = "dieciseis"  class="16" onClick="cmon(this)">
                     <figure >
                         <img src="./fotos/21rp.png" alt="hyper" />
                         <figcaption class="dieciseis">
@@ -242,7 +249,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "diecisiete" onClick="cmon(this)">
+                <div id = "diecisiete"  class="17" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/20rp.png" alt="hyper" />
                         <figcaption class="diecisiete">
@@ -252,7 +259,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id = "dieciocho" onClick="cmon(this)">
+                <div id = "dieciocho"  class="18" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/10rp.png" alt="hyper" />
                         <figcaption class="dieciocho">
@@ -262,7 +269,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id="diecinueve" onClick="cmon(this)">
+                <div id="diecinueve"  class="19" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/19rp.png" alt="hyper" />
                         <figcaption class="diecinueve">
@@ -272,7 +279,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div id="veinte" onClick="cmon(this)">
+                <div id="veinte"  class="20" onClick="cmon(this)">
                     <figure>
                         <img src="./fotos/22rw.png" alt="hyper" />
                         <figcaption class="veinte">
