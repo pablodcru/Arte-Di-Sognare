@@ -60,6 +60,21 @@ body:link::after {
     transform: scaleY(1);
 }*/
 
+/* LOADER */
+.loader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+  
+.loader img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /*NEW CLASSES AND ATTRIBUTES TO DISPLAY THE IMAGE AFTER CLICKING ON IT*/
 
@@ -438,20 +453,3 @@ figcaption.veinte {
     grid-column:4/6;
     grid-row: 2/3;
 }
-
-/* AFTER CLICK STYLES 
-.clickcontainer{
-    display: flex;
-    
-} 
-.moving {
-    flex: auto;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    width: 500px;
-    height: 800px;
-    object-fit: contain;
-}
-*/
