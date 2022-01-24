@@ -17,13 +17,21 @@ const menu = document.querySelector('.menu');
 const closingButton = document.querySelector('.button');
 const title = document.querySelector('.title');
 const moveButtons = document.querySelector('.moveButtons');
+const myDiv = document.getElementsByTagName("div");
 
 
 
 let id;
+let classy;
+let classNum;
 
 
 function getBigger(event) {
+    
+
+
+
+    
 
     //Cambiar de color el BG, OBJETIVO, personalizarlo para cada foto
     let bg = getComputedStyle(document.documentElement).getPropertyValue(`--${id}`);
@@ -77,16 +85,42 @@ function getBigger(event) {
         iMoveLeft.classList.add('fas', 'fa-caret-left');
     }
 
-    moveLeft.addEventListener('click', movePhoto);
-    moveRight.addEventListener('click', movePhoto);
+
     
     //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
     menu.classList.add('hidden');
     gallery.classList.add('hidden');
 
+    //Boton para ir a la foto previa. Lo hacemos restando uno a la clase actual, y localizamos el id del div que tiene esa clase, y cerramos la foto actual y llamamos a la foto anterior con el nuevo id
+    function previousPhoto() {
+        if ( classNum > 1 ){
+            classNum = classNum - 1;
+            for ( let i = 0; i < myDiv.length; i++){
+                if( myDiv[i].classList.contains(classNum) ){
+                    closePhoto();
+                    id= myDiv[i].id;
+                    getBigger();
+                }
+            }        
+        }
+    }
+
+    //Boton para ir a la foto siguiente
+    function nextPhoto() {
+        if( classNum < 20 ){
+            classNum = classNum + 1;
+            for ( let i = 0; i < myDiv.length; i++){
+                if( myDiv[i].classList.contains(classNum) ){
+                    closePhoto();
+                    id= myDiv[i].id;
+                    getBigger();
+                }
+            }
+        }
+    }
 
     //Darle interactividad al boton de ir atrás
-    closingButton.addEventListener('click', () => {
+    function closePhoto() {
         document.body.style.background = "#202020";
         displayed.removeChild(img);
         title.classList.add('hidden');
@@ -95,20 +129,42 @@ function getBigger(event) {
         moveButtons.removeChild(moveRight);
         menu.classList.remove('hidden');
         gallery.classList.remove('hidden');
-    })
+    }
+
+    //Eventos
+    closingButton.addEventListener('click', closePhoto);
+    moveLeft.addEventListener('click', previousPhoto);
+    moveRight.addEventListener('click', nextPhoto);
+
+    //HAY QUE VERLO: MOVERLOS CON LAS FLECHAS
+    /* document.addEventListener('keydown', (e) => {
+        console.log('pressed!!');
+        e = e || window.event;
+        switch( e.key) {
+            case 'ArrowLeft':
+                previousPhoto();
+                break;
+            case 'ArrowRight':
+                nextPhoto();
+                break;
+        };
+        
+    }); */
+    
 };
 
 
-//Establecer interactividad para pasar de foto una vez agrandada de izquierda a derecha
-function movePhoto() {
-    console.log('wihuuu');
-}
 
 
 
-//Para conseguir localizar a que foto se pincha, y posteriormente utilizar el nombre de ese id para buscar la foto que se mostrara.
+
+
+//Para conseguir localizar a que foto se pincha, y posteriormente utilizar el nombre de ese id para buscar la foto que se mostrara. Tambien localizamos la clase y la pasamos a number, de modo que podemos utilizar esto para jugar con la interactividad de las flechas.
 function cmon(element) {
     id = element.id;
+    classy = element.className;
+    classNum = parseFloat(classy);
+
 }
 
 //Para llamar a la función una vez se ha definido el id; nose pq necesito meter el getBigger dentro de la arrow function, de otra manera, no funciona
@@ -119,7 +175,7 @@ gallery.addEventListener('click', () => {
 
 
 
-
+//tengo que poner las funciones closePhoto dentro de getBigger porque si la saco, el scope no alcanza y me dice que no reconoce img, por ejemplo.
 
 
 
@@ -144,3 +200,19 @@ function appearImage(event) {
 
 img1.addEventListener('mouseenter', hideImage)
 img1.addEventListener('mouseleave', appearImage)*/
+
+
+//BORRADOR 2: chequeando el tipo para hacer la interactividad de las flechas
+/*     if ( typeof classy === "string") {
+        console.log('classy is a string');
+    }else if( typeof classy === "number"){
+        console.log('classy is a number and i appreciate it');
+    } */
+    //es un string
+
+/*     if ( typeof reality === "string") {
+        console.log('reality is a string');
+    }else if( typeof reality === "number"){
+        console.log('reality is a number and i appreciate it');
+    }
+    //ahora es un number */
