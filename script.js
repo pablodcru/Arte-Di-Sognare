@@ -5,7 +5,7 @@ const tres = document.querySelector('#tres');
 const cuatro = document.querySelector('#cuatro');
 
 //CLASES PARA MOSTRAR LAS CAPTION CORRESPONDIENTES
-const oneC = document.querySelector('.uno');
+const unoC = document.querySelector('.uno');
 const dosC = document.querySelector('.dos');
 const tresC = document.querySelector('.tres');
 const cuatroC = document.querySelector('.cuatro');
@@ -46,13 +46,17 @@ function getBigger(event) {
     //Título y borradores
     /* title.classList.add("figcaption");
     title.append(oneC.textContent); */
+    /*     let figCapId = `${id}C`;
+        const prueba
+        console.log(id); */
     title.classList.remove('hidden');
-    let figCapId = `${id}C`;
-    let figCap = tresC.children;     //poner el titulo para cada obre, signo dolar
-/*     console.log(figCapId, figCap, figCapId.children);
- */    for ( let i = figCap.length - 1; i >= 0; i--) {
-        title.appendChild(figCap[i]);
-    }
+    const prueba = document.querySelector(`.${id}`);
+    //console.log(prueba, tresC);
+    let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
+    const figCap1 = figCap.map( i => {title.appendChild(figCap[i])});
+      /* for ( let i = figCap.length - 1; i >= 0; i--) {
+        title.appendChild(figCap[i]); */ 
+    
 
     /* for ( let i = 0; i <= figcap.length; i++) {
         console.log(figcap.length);
