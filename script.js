@@ -25,7 +25,6 @@ let id;
 let classy;
 let classNum;
 
-
 function getBigger(event) {
     
 
@@ -52,17 +51,25 @@ function getBigger(event) {
     title.classList.remove('hidden');
     const prueba = document.querySelector(`.${id}`);
     //console.log(prueba, tresC);
-    let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
-    const figCap1 = figCap.map( i => {title.appendChild(figCap[i])});
-      /* for ( let i = figCap.length - 1; i >= 0; i--) {
-        title.appendChild(figCap[i]); */ 
+    //let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
     
+    let figCap = `${id}`;
+    console.log(figCap.children);
+    for ( let i = cuatroC.length - 1; i >= 0; i--) {
+        title.appendChild(figCap[i]); 
+    };
+    
+    /* console.log(typeof(figCap), figCap.length); */
+    /* let mod = figCap.map(function(element) {
+        return title.appendChild(element);
+    }); */
 
-    /* for ( let i = 0; i <= figcap.length; i++) {
-        console.log(figcap.length);
-        console.log(i, figcap[i]);
-        title.appendChild(figcap[i]);
-    } */
+
+    /* for ( let i = 0; i <= figCap.length; i++) {
+        console.log(i);
+        title.appendChild(figCap[i]);   
+        title.appendChild(figCap[i++]);
+    }; */
 
     //Crear boton de ir atrás
     const button = document.createElement('button');
@@ -127,6 +134,7 @@ function getBigger(event) {
     function closePhoto() {
         document.body.style.background = "#202020";
         displayed.removeChild(img);
+        //title.innerHTML = '';
         title.classList.add('hidden');
         closingButton.removeChild(button);
         moveButtons.removeChild(moveLeft);
@@ -169,12 +177,12 @@ function cmon(element) {
     classy = element.className;
     classNum = parseFloat(classy);
 
-}
+};
 
 //Para llamar a la función una vez se ha definido el id; nose pq necesito meter el getBigger dentro de la arrow function, de otra manera, no funciona
 gallery.addEventListener('click', () => {
     getBigger();
-})
+});
 
 
 
@@ -219,4 +227,4 @@ img1.addEventListener('mouseleave', appearImage)*/
     }else if( typeof reality === "number"){
         console.log('reality is a number and i appreciate it');
     }
-    //ahora es un number */
+    //ahora es un number*/
