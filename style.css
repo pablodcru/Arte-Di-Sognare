@@ -365,8 +365,6 @@ figcaption.veinte {
     background-color: var(--veinte);
 }
 
-/* ESTABLECEMOS LA DISPOSICION DEL GRID */
-/* Empezamos estableciendo la disposición horizontal junto con los tamaños */
 .row1{
     display: grid;
     grid-template-columns: repeat(5, 303px);
