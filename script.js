@@ -24,6 +24,8 @@ const myDiv = document.getElementsByTagName("div");
 let id;
 let classy;
 let classNum;
+let prueba;
+let hijitos;
 
 function getBigger(event) {
     
@@ -49,15 +51,19 @@ function getBigger(event) {
         const prueba
         console.log(id); */
     title.classList.remove('hidden');
-    const prueba = document.querySelector(`.${id}`);
+    prueba = document.querySelector(`.${id}`);
     //console.log(prueba, tresC);
     //let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
+    let jugamos = prueba.cloneNode(true);
+    hijitos = jugamos.children;
+
+
     
-    let figCap = `${id}`;
-    console.log(figCap.children);
-    for ( let i = cuatroC.length - 1; i >= 0; i--) {
-        title.appendChild(figCap[i]); 
+    for ( let i = hijitos.length - 1; i >= 0; i--) {
+        title.appendChild(hijitos[i]); 
     };
+    console.log(title);
+    //titulaso = title.children;
     
     /* console.log(typeof(figCap), figCap.length); */
     /* let mod = figCap.map(function(element) {
@@ -132,6 +138,12 @@ function getBigger(event) {
 
     //Darle interactividad al boton de ir atrás
     function closePhoto() {
+        /* for ( let i = titulaso.length - 1; i >= 0; i--) {
+            title.removeChild(titulaso[i]); 
+        };
+        
+        console.log(titulaso); */
+        title.innerHTML='';
         document.body.style.background = "#202020";
         displayed.removeChild(img);
         //title.innerHTML = '';
