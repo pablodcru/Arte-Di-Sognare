@@ -18,66 +18,92 @@ const closingButton = document.querySelector('.button');
 const title = document.querySelector('.title');
 const moveButtons = document.querySelector('.moveButtons');
 const myDiv = document.getElementsByTagName("div");
-
+const loader = document.querySelector('.loader');
 
 
 let id;
 let classy;
 let classNum;
 
+
+
 function getBigger(event) {
-    
+
+    //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
+    menu.classList.add('hidden');
+    gallery.classList.add('hidden');
+
+
     //Cambiar de color el BG, OBJETIVO, personalizarlo para cada foto
     let bg = getComputedStyle(document.documentElement).getPropertyValue(`--${id}`);
+    document.body.classList.add('animation');
     document.body.style.background = bg;
 
-   //Para hacer display en la foto
-    let img = document.createElement('img');
-    img.setAttribute('src', `./fotos/${id}.png`);
-    img.setAttribute('class', 'proving');
-    displayed.appendChild(img);
-
-    //Título y borradores
+    //Loader
+    loader.classList.remove('hidden');
     
-    title.classList.remove('hidden');
-    title.classList.add('flexing');
-    let addTitle = document.querySelector(`.${id}`);
-    let cloneTitle = addTitle.cloneNode(true);
-    Array.prototype.forEach.call(cloneTitle.children, element => {
-        title.appendChild(element);
-    });
+    
+    //Para hacer display en la foto
+    const img = document.createElement('img');
+    function displayPhoto() {
+        img.setAttribute('src', `./fotos/${id}.png`);
+        img.setAttribute('class', 'proving');
+        displayed.appendChild(img);
+    }
+
+
+    //Creación del título en donde tenemos que clonar el html interno de figcap para poder posteriormente añadirlo y eliminarlo a nuestra merced
+    const addTitle = document.querySelector(`.${id}`);
+    const cloneTitle = addTitle.cloneNode(true);
+    function displayTitle() {
+        title.classList.remove('hidden');
+        title.classList.add('flexing');
+        Array.prototype.forEach.call(cloneTitle.children, element => {
+            title.appendChild(element);
+        });
+    }
     
 
-    //Crear boton de ir atrás
+    //Crear boton de ir atrás y funcion de boton hacia atras
     const button = document.createElement('button');
-    button.classList.add('fas', 'fa-times');
-    closingButton.appendChild(button);
+    function displayBackButton () {
+        button.classList.add('fas', 'fa-times');
+        closingButton.appendChild(button);
 
-    //Crear botones de ir dcha/izq
+    }
+    
+
+    //Crear botones de ir dcha/izq y funcion para mostrar los botones de movimiento
     const moveLeft = document.createElement('button');
     const moveRight = document.createElement('button');
     const iMoveLeft = document.createElement('i');
     const iMoveRight = document.createElement('i');
-
-    moveLeft.appendChild(iMoveLeft);
-    moveRight.appendChild(iMoveRight);
-    moveButtons.appendChild(moveLeft);
-    moveButtons.appendChild(moveRight);
-
-    if ( id === 'uno' ) {
-        iMoveRight.classList.add('fas', 'fa-caret-right');
-    } else if ( id === 'veinte') {
-        iMoveLeft.classList.add('fas', 'fa-caret-left');
-    }else {
-        iMoveRight.classList.add('fas', 'fa-caret-right');
-        iMoveLeft.classList.add('fas', 'fa-caret-left');
+    function displayMoveButton() {
+        moveLeft.appendChild(iMoveLeft);
+        moveRight.appendChild(iMoveRight);
+        moveButtons.appendChild(moveLeft);
+        moveButtons.appendChild(moveRight);
+    
+        if ( id === 'uno' ) {
+            iMoveRight.classList.add('fas', 'fa-caret-right');
+        } else if ( id === 'veinte') {
+            iMoveLeft.classList.add('fas', 'fa-caret-left');
+        }else {
+            iMoveRight.classList.add('fas', 'fa-caret-right');
+            iMoveLeft.classList.add('fas', 'fa-caret-left');
+        }
     }
 
 
-    
-    //Para que el resto de elementos no aparezcan y se vea solo la foto, título y demás
-    menu.classList.add('hidden');
-    gallery.classList.add('hidden');
+    //Realizamos una llamada al timeout para que la transicion y la aparicion de los elementos sea pareja, antes se ponia muy de golpe los elementos y apenas se apreciaba la transicion
+    setTimeout(function() {
+        displayBackButton();
+        displayPhoto();
+        displayTitle();
+        displayMoveButton();
+        loader.classList.add('hidden');
+    }, Math.floor(Math.random() * (500-100)+100));
+
 
     //Boton para ir a la foto previa. Lo hacemos restando uno a la clase actual, y localizamos el id del div que tiene esa clase, y cerramos la foto actual y llamamos a la foto anterior con el nuevo id
     function previousPhoto() {
@@ -93,6 +119,7 @@ function getBigger(event) {
         }
     }
 
+
     //Boton para ir a la foto siguiente
     function nextPhoto() {
         if( classNum < 20 ){
@@ -107,14 +134,15 @@ function getBigger(event) {
         }
     }
 
-    //Darle interactividad al boton de ir atrás
+
+    //Darle interactividad al boton de ir al menu
     function closePhoto() {
         /* for ( let i = titulaso.length - 1; i >= 0; i--) {
             title.removeChild(titulaso[i]); 
-        };
-        
+        };     
         console.log(titulaso); */
         title.innerHTML='';
+        document.body.classList.remove('animation');
         document.body.style.background = "#202020";
         displayed.removeChild(img);
         //title.innerHTML = '';
@@ -125,6 +153,7 @@ function getBigger(event) {
         menu.classList.remove('hidden');
         gallery.classList.remove('hidden');
     }
+
 
     //Eventos
     closingButton.addEventListener('click', closePhoto);
@@ -161,6 +190,7 @@ function cmon(element) {
     classNum = parseFloat(classy);
 
 };
+
 
 //Para llamar a la función una vez se ha definido el id; nose pq necesito meter el getBigger dentro de la arrow function, de otra manera, no funciona
 gallery.addEventListener('click', () => {
@@ -248,4 +278,3 @@ img1.addEventListener('mouseleave', appearImage)*/
      //console.log(prueba, tresC);
     //let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
     // is not a function title.append.innerHTML(jugamos);
-
