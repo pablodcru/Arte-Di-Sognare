@@ -24,16 +24,9 @@ const myDiv = document.getElementsByTagName("div");
 let id;
 let classy;
 let classNum;
-let prueba;
-let hijitos;
 
 function getBigger(event) {
     
-
-
-
-    
-
     //Cambiar de color el BG, OBJETIVO, personalizarlo para cada foto
     let bg = getComputedStyle(document.documentElement).getPropertyValue(`--${id}`);
     document.body.style.background = bg;
@@ -45,37 +38,15 @@ function getBigger(event) {
     displayed.appendChild(img);
 
     //Título y borradores
-    /* title.classList.add("figcaption");
-    title.append(oneC.textContent); */
-    /*     let figCapId = `${id}C`;
-        const prueba
-        console.log(id); */
+    
     title.classList.remove('hidden');
-    prueba = document.querySelector(`.${id}`);
-    //console.log(prueba, tresC);
-    //let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
-    let jugamos = prueba.cloneNode(true);
-    hijitos = jugamos.children;
-
-
+    title.classList.add('flexing');
+    let addTitle = document.querySelector(`.${id}`);
+    let cloneTitle = addTitle.cloneNode(true);
+    Array.prototype.forEach.call(cloneTitle.children, element => {
+        title.appendChild(element);
+    });
     
-    for ( let i = hijitos.length - 1; i >= 0; i--) {
-        title.appendChild(hijitos[i]); 
-    };
-    console.log(title);
-    //titulaso = title.children;
-    
-    /* console.log(typeof(figCap), figCap.length); */
-    /* let mod = figCap.map(function(element) {
-        return title.appendChild(element);
-    }); */
-
-
-    /* for ( let i = 0; i <= figCap.length; i++) {
-        console.log(i);
-        title.appendChild(figCap[i]);   
-        title.appendChild(figCap[i++]);
-    }; */
 
     //Crear boton de ir atrás
     const button = document.createElement('button');
@@ -240,3 +211,41 @@ img1.addEventListener('mouseleave', appearImage)*/
         console.log('reality is a number and i appreciate it');
     }
     //ahora es un number*/
+
+
+//BORRADOR 3: el título que me ha vuelto loco, cuando se itera con length es una propiedad dinámica y esta se deja algun children por ahí sin mostrar, no lo he conseguido resolver y se come la raya que aparece en la foto al hover, pero bueno, queda guay aun asi
+/* title.classList.add("figcaption");
+    title.append(oneC.textContent); */
+    /*     let figCapId = `${id}C`;
+        const prueba
+        console.log(id); */
+
+
+    /* for( let i = 0 ; i < jugamos.children.length; i++){
+        j = jugamos.children[i];
+        title.classList.add('flexing');
+        title.appendChild(j);
+    } */
+    
+    /* for ( let i = hijitos.length - 1; i >= 0; i--) {
+        title.appendChild(hijitos[i]); 
+    };
+    console.log(title); */
+    //titulaso = title.children;
+    
+    /* console.log(typeof(figCap), figCap.length); */
+    /* let mod = figCap.map(function(element) {
+        return title.appendChild(element);
+    }); */
+
+
+    /* for ( let i = 0; i <= figCap.length; i++) {
+        console.log(i);
+        title.appendChild(figCap[i]);   
+        title.appendChild(figCap[i++]);
+    }; */
+
+     //console.log(prueba, tresC);
+    //let figCap = prueba.children;     //poner el titulo para cada obre, signo dolar
+    // is not a function title.append.innerHTML(jugamos);
+
