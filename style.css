@@ -38,27 +38,14 @@ body{
     position: relative;
     z-index: -1;
 }
-
-
-/*TO DO: TRANSITION AFTER CLICKING ON IMAGES
-body:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: scaleY(0);
-    transform-origin: bottom center;
-    background: blue;
-    z-index: -1;
-    transition: transform 2s;
- 
+/*transition between photos*/
+.animation{
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 1s;
 }
-
-body:link::after {
-    transform: scaleY(1);
-}*/
 
 /* LOADER */
 .loader {
@@ -101,6 +88,10 @@ img.proving {
     top: 5%;
     left: 3%;
     font-size: 10px;
+}
+.flexing{
+    display: block;
+    text-align: center;
 }
 /* Buttons */
 button {
@@ -365,6 +356,8 @@ figcaption.veinte {
     background-color: var(--veinte);
 }
 
+/* ESTABLECEMOS LA DISPOSICION DEL GRID */
+/* Empezamos estableciendo la disposición horizontal junto con los tamaños */
 .row1{
     display: grid;
     grid-template-columns: repeat(5, 303px);
@@ -451,3 +444,4 @@ figcaption.veinte {
     grid-column:4/6;
     grid-row: 2/3;
 }
+
