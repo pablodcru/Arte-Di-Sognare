@@ -360,13 +360,13 @@ figcaption.veinte {
 /* Empezamos estableciendo la disposición horizontal junto con los tamaños */
 .row1{
     display: grid;
-    grid-template-columns: repeat(5, 303px);
-    grid-template-rows: repeat(2, 303px);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
 }
 .row2{
     display: grid;
-    grid-template-columns: repeat(5, 303px);
-    grid-template-rows: repeat(1, 303px);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
 }
 
 /* Establecemos cada posición de las imagenes */
